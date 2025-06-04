@@ -1,0 +1,55 @@
+# Dependencies
+/node_modules
+/ReacQueryTest/node_modules
+/.pnp
+.pnp.js
+yarn.lock
+package-lock.json
+
+# Testing
+/coverage
+/ReacQueryTest/test-results
+/ReacQueryTest/playwright-report
+/ReacQueryTest/playwright/.cache/
+/ReacQueryTest/test-logs
+
+# Production builds
+/build
+/dist
+/out
+/.next
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-workspace
+
+# Misc
+.cache
+.temp
+.tmp
+.eslintcache
+.parcel-cache
+thumbs.db
