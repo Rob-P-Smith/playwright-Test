@@ -1,10 +1,10 @@
 # React Query Test Application
 
-A React application demonstrating React Query for data fetching and management, with comprehensive automated testing using Playwright.
+A React application demonstrating React Query for data fetching and management based on the simple vite demo site. Has example automated testing using Playwright using a test file to put the tests and a test execution file to execute the tests, providing a single location to add tests without needing to adjust the execution logic.
 
 ## 🌟 Project Overview
 
-This application provides a clean interface for managing randomly generated numbers with the following features:
+This application provides an interface for managing randomly generated numbers with the following features:
 
 - **View Numbers**: Display a list of randomly generated numbers
 - **Generate New**: Create new random numbers on demand  
