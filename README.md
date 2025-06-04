@@ -4,6 +4,8 @@ A React application demonstrating React Query for data fetching and management b
 
 Comments left all over the place for those unfarmiliar with the librarie used.
 
+NOTE: API has a deliberate delay introduced to emulate a slow network so calls take much longer than actually necessary.
+
 ## 🌟 Project Overview
 
 This application provides an interface for managing randomly generated numbers with the following features:
