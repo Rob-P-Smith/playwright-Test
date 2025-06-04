@@ -1,54 +1,153 @@
-# React + TypeScript + Vite
+# React Query Test Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application demonstrating React Query for data fetching and management, with comprehensive automated testing using Playwright.
 
-Currently, two official plugins are available:
+## 🌟 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This application provides a clean interface for managing randomly generated numbers with the following features:
 
-## Expanding the ESLint configuration
+- **View Numbers**: Display a list of randomly generated numbers
+- **Generate New**: Create new random numbers on demand  
+- **Delete Numbers**: Remove existing numbers from the collection
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Architecture
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The project consists of two main components:
+
+1. **Node.js Express Server** - Manages random number data via REST API
+2. **React Client** - Interactive frontend using React Query for state management
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm package manager
+
+### Installation
+
+**Install server dependencies:**
+```bash
+cd ../
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+**Install client dependencies:**
+```bash
+cd ReacQueryTest
+npm install
 ```
+
+---
+
+## 🏃‍♂️ Running the Application
+
+### Start the Server
+
+From the root directory:
+```bash
+node server.js
+```
+
+> The server will start on http://localhost:3000 and initialize with 10 random numbers.
+
+### Start the Client
+
+From the ReacQueryTest directory:
+```bash
+npm run dev
+```
+
+> The client application will be available at http://localhost:5173
+
+---
+
+## 🧪 Testing with Playwright
+
+This project uses Playwright for comprehensive end-to-end testing.
+
+### Running Tests
+
+**Standard test execution:**
+```bash
+# From the ReacQueryTest directory
+npx playwright test
+```
+
+**Interactive UI mode for debugging:**
+```bash
+npx playwright test --ui
+```
+
+### Test Architecture
+
+- **Configuration**: Tests are configured in `playwright.config.ts` with settings for browsers, timeouts, and test output locations
+- **Test Files**: All tests are located in the `tests/` directory
+- **Test Structure**: 
+  - Tests are defined as objects with `title` and `execute` properties in `testFile.ts`
+  - The test runner in `testTest.spec.ts` executes these test definitions
+
+### Test Outputs
+
+Tests generate comprehensive outputs for analysis:
+
+- **HTML Reports**: Detailed test results available in `index.html`
+- **Logs**: Timestamped log files created in `test-logs/` for each test run
+- **Screenshots**: Automatically captured on test failures in `test-results/artifacts/`
+
+### Creating New Tests
+
+To add a new test, add a test definition to the `tests` array in `testFile.ts`:
+
+```javascript
+{
+  title: "Your Test Name",
+  execute: async (page, logToFile) => {
+    // Navigate to the application
+    await page.goto("http://localhost:5173/");
+    await logToFile("Navigated to app in test tab");
+
+    // Add your test steps here
+    // ...
+
+    // Add assertions
+    expect(someCondition).toBeTruthy();
+    await logToFile("Test passed successfully");
+  }
+}
+```
+
+The test runner will automatically execute your new test and generate appropriate logs and reports.
+
+---
+
+## 📁 Project Structure
+
+```
+ReacQuery/
+├── server.js                 # Express server for the API
+├── package.json              # Server dependencies
+└── ReacQueryTest/            # React client application
+    ├── src/                  # React source code
+    ├── tests/                # Playwright tests
+    ├── test-logs/            # Test execution logs
+    └── test-results/         # Test reports and artifacts
+```
+
+---
+
+## 🛠️ Technologies Used
+
+- **React** with TypeScript
+- **React Query** for data fetching and caching
+- **React Router** for navigation
+- **Express** for the backend API
+- **Playwright** for automated testing
+
+---
+
+## 📝 License
+
+This project is available for educational and demonstration purposes.
