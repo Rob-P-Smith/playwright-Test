@@ -1,6 +1,8 @@
 # React Query Test Application
 
-A React application demonstrating React Query for data fetching and management based on the simple vite demo site. Has example automated testing using Playwright using a test file to put the tests and a test execution file to execute the tests, providing a single location to add tests without needing to adjust the execution logic.
+A React application demonstrating React Query for data fetching and management based on the simple vite demo site. Has roughed out examples automated testing using Playwright using a test file to put the tests and a test execution file to execute the tests, providing a single location to add tests without needing to adjust the execution logic.
+
+Comments left all over the place for those unfarmiliar with the librarie used.
 
 ## 🌟 Project Overview
 
