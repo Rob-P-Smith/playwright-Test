@@ -42,6 +42,7 @@ npm install
 ```bash
 cd ReacQueryTest
 npm install
+npx playwright install
 ```
 
 ---
